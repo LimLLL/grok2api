@@ -15,9 +15,9 @@ concurrency:
   group: ghcr-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
+permissions:          # 显式声明，强制覆盖
   contents: read
-
+  packages: write     # 必须有这一行
 jobs:
   verify:
     name: Verify
